@@ -1,0 +1,29 @@
+---
+- hosts: localhost
+  tasks:
+    - name: install packages
+      become: true
+      become_user: root
+      package:
+        name:
+          - bash-completion
+          - direnv 
+          - git 
+          - jq 
+          - nodejs 
+          - perl 
+          - direnv # pyenv 
+          - rbenv 
+          - shellcheck 
+#          - vagrant-completion 
+          - yarn 
+#          - google-chrome 
+          - pdk # puppetlabs/puppet/pdk
+          - vagrant 
+          - virtualbox
+    - name: install snaps
+      become: true
+      snap:
+        name:
+          - shfmt
+          - postman
